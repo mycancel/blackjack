@@ -22,8 +22,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    removeFromShoe(id:ID, order:Number): Deck
-    addToInPlay(id:ID, order:Number): Deck
+    removeFromShoe(deckId:ID, order:Number): Deck
+    addToInPlay(deckId:ID, order:Number): Deck
   }
 `;
 
