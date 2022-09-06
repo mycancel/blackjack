@@ -4,6 +4,10 @@ const deckSchema = new Schema({
   cards: [{
     type: Schema.Types.ObjectId,
     ref: 'Card'
+  }],
+  inPlay: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Card'
   }]
 });
 
