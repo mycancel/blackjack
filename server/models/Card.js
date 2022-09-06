@@ -1,6 +1,11 @@
 const { Schema, model } = require('mongoose');
 
 const cardSchema = new Schema({
+  order: {
+    type: Number,
+    required: true,
+    unique: true,
+  },
   suit: {
     type: String,
     required: true
@@ -10,7 +15,7 @@ const cardSchema = new Schema({
     required: true
   },
   value: {
-    type: Number,
+    type: [Number],
     required: true
   },
   frontImage: {
