@@ -6,4 +6,4 @@ This project is a stepping stone in a personal goal to create a card game. Thus,
 
 ## Acknowledgement 
 
-Starter code and file structure in "Ititial commit" was created by Anthony Cooper in the UNC Charlotte Coding Bootcamp.
+Starter code and file structure in "Initial commit" was created by Anthony Cooper in the UNC Charlotte Coding Bootcamp.
