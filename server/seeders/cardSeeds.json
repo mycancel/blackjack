@@ -1,0 +1,368 @@
+[
+  {
+    "order": 1,
+    "suit": "hearts",
+    "name": "Ace",
+    "value": [1, 11],
+    "frontImage": "Ace"
+  },
+  {
+    "order": 2,
+    "suit": "hearts",
+    "name": "Two",
+    "value": [2],
+    "frontImage": "Two"
+  },
+  {
+    "order": 3,
+    "suit": "hearts",
+    "name": "Three",
+    "value": [3],
+    "frontImage": "Three"
+  },
+  {
+    "order": 4,
+    "suit": "hearts",
+    "name": "Four",
+    "value": [4],
+    "frontImage": "Four"
+  },
+  {
+    "order": 5,
+    "suit": "hearts",
+    "name": "Five",
+    "value": [5],
+    "frontImage": "Five"
+  },
+  {
+    "order": 6,
+    "suit": "hearts",
+    "name": "Six",
+    "value": [6],
+    "frontImage": "Six"
+  },
+  {
+    "order": 7,
+    "suit": "hearts",
+    "name": "Seven",
+    "value": [7],
+    "frontImage": "Seven"
+  },
+  {
+    "order": 8,
+    "suit": "hearts",
+    "name": "Eight",
+    "value": [8],
+    "frontImage": "Eight"
+  },
+  {
+    "order": 9,
+    "suit": "hearts",
+    "name": "Nine",
+    "value": [9],
+    "frontImage": "Nine"
+  },
+  {
+    "order": 10,
+    "suit": "hearts",
+    "name": "Ten",
+    "value": [10],
+    "frontImage": "Ten"
+  },
+  {
+    "order": 11,
+    "suit": "hearts",
+    "name": "Jack",
+    "value": [10],
+    "frontImage": "Jack"
+  },
+  {
+    "order": 12,
+    "suit": "hearts",
+    "name": "Queen",
+    "value": [10],
+    "frontImage": "Queen"
+  },
+  {
+    "order": 13,
+    "suit": "hearts",
+    "name": "King",
+    "value": [10],
+    "frontImage": "King"
+  },
+  {
+    "order": 14,
+    "suit": "diamonds",
+    "name": "Ace",
+    "value": [1, 11],
+    "frontImage": "Ace"
+  },
+  {
+    "order": 15,
+    "suit": "diamonds",
+    "name": "Two",
+    "value": [2],
+    "frontImage": "Two"
+  },
+  {
+    "order": 16,
+    "suit": "diamonds",
+    "name": "Three",
+    "value": [3],
+    "frontImage": "Three"
+  },
+  {
+    "order": 17,
+    "suit": "diamonds",
+    "name": "Four",
+    "value": [4],
+    "frontImage": "Four"
+  },
+  {
+    "order": 18,
+    "suit": "diamonds",
+    "name": "Five",
+    "value": [5],
+    "frontImage": "Five"
+  },
+  {
+    "order": 19,
+    "suit": "diamonds",
+    "name": "Six",
+    "value": [6],
+    "frontImage": "Six"
+  },
+  {
+    "order": 20,
+    "suit": "diamonds",
+    "name": "Seven",
+    "value": [7],
+    "frontImage": "Seven"
+  },
+  {
+    "order": 21,
+    "suit": "diamonds",
+    "name": "Eight",
+    "value": [8],
+    "frontImage": "Eight"
+  },
+  {
+    "order": 22,
+    "suit": "diamonds",
+    "name": "Nine",
+    "value": [9],
+    "frontImage": "Nine"
+  },
+  {
+    "order": 23,
+    "suit": "diamonds",
+    "name": "Ten",
+    "value": [10],
+    "frontImage": "Ten"
+  },
+  {
+    "order": 24,
+    "suit": "diamonds",
+    "name": "Jack",
+    "value": [10],
+    "frontImage": "Jack"
+  },
+  {
+    "order": 25,
+    "suit": "diamonds",
+    "name": "Queen",
+    "value": [10],
+    "frontImage": "Queen"
+  },
+  {
+    "order": 26,
+    "suit": "diamonds",
+    "name": "King",
+    "value": [10],
+    "frontImage": "King"
+  },
+  {
+    "order": 27,
+    "suit": "spades",
+    "name": "Ace",
+    "value": [1, 11],
+    "frontImage": "Ace"
+  },
+  {
+    "order": 28,
+    "suit": "spades",
+    "name": "Two",
+    "value": [2],
+    "frontImage": "Two"
+  },
+  {
+    "order": 29,
+    "suit": "spades",
+    "name": "Three",
+    "value": [3],
+    "frontImage": "Three"
+  },
+  {
+    "order": 30,
+    "suit": "spades",
+    "name": "Four",
+    "value": [4],
+    "frontImage": "Four"
+  },
+  {
+    "order": 31,
+    "suit": "spades",
+    "name": "Five",
+    "value": [5],
+    "frontImage": "Five"
+  },
+  {
+    "order": 32,
+    "suit": "spades",
+    "name": "Six",
+    "value": [6],
+    "frontImage": "Six"
+  },
+  {
+    "order": 33,
+    "suit": "spades",
+    "name": "Seven",
+    "value": [7],
+    "frontImage": "Seven"
+  },
+  {
+    "order": 34,
+    "suit": "spades",
+    "name": "Eight",
+    "value": [8],
+    "frontImage": "Eight"
+  },
+  {
+    "order": 35,
+    "suit": "spades",
+    "name": "Nine",
+    "value": [9],
+    "frontImage": "Nine"
+  },
+  {
+    "order": 36,
+    "suit": "spades",
+    "name": "Ten",
+    "value": [10],
+    "frontImage": "Ten"
+  },
+  {
+    "order": 37,
+    "suit": "spades",
+    "name": "Jack",
+    "value": [10],
+    "frontImage": "Jack"
+  },
+  {
+    "order": 38,
+    "suit": "spades",
+    "name": "Queen",
+    "value": [10],
+    "frontImage": "Queen"
+  },
+  {
+    "order": 39,
+    "suit": "spades",
+    "name": "King",
+    "value": [10],
+    "frontImage": "King"
+  },
+  {
+    "order": 40,
+    "suit": "clubs",
+    "name": "Ace",
+    "value": [1, 11],
+    "frontImage": "Ace"
+  },
+  {
+    "order": 41,
+    "suit": "clubs",
+    "name": "Two",
+    "value": [2],
+    "frontImage": "Two"
+  },
+  {
+    "order": 42,
+    "suit": "clubs",
+    "name": "Three",
+    "value": [3],
+    "frontImage": "Three"
+  },
+  {
+    "order": 43,
+    "suit": "clubs",
+    "name": "Four",
+    "value": [4],
+    "frontImage": "Four"
+  },
+  {
+    "order": 44,
+    "suit": "clubs",
+    "name": "Five",
+    "value": [5],
+    "frontImage": "Five"
+  },
+  {
+    "order": 45,
+    "suit": "clubs",
+    "name": "Six",
+    "value": [6],
+    "frontImage": "Six"
+  },
+  {
+    "order": 46,
+    "suit": "clubs",
+    "name": "Seven",
+    "value": [7],
+    "frontImage": "Seven"
+  },
+  {
+    "order": 47,
+    "suit": "clubs",
+    "name": "Eight",
+    "value": [8],
+    "frontImage": "Eight"
+  },
+  {
+    "order": 48,
+    "suit": "clubs",
+    "name": "Nine",
+    "value": [9],
+    "frontImage": "Nine"
+  },
+  {
+    "order": 49,
+    "suit": "clubs",
+    "name": "Ten",
+    "value": [10],
+    "frontImage": "Ten"
+  },
+  {
+    "order": 50,
+    "suit": "clubs",
+    "name": "Jack",
+    "value": [10],
+    "frontImage": "Jack"
+  },
+  {
+    "order": 51,
+    "suit": "clubs",
+    "name": "Queen",
+    "value": [10],
+    "frontImage": "Queen"
+  },
+  {
+    "order": 52,
+    "suit": "clubs",
+    "name": "King",
+    "value": [10],
+    "frontImage": "King"
+  }
+]
+
+
