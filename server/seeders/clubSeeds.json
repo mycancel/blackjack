@@ -1,0 +1,93 @@
+[
+  {
+    "order": 40,
+    "suit": "clubs",
+    "name": "Ace",
+    "value": [1, 11],
+    "frontImage": "Ace"
+  },
+  {
+    "order": 41,
+    "suit": "clubs",
+    "name": "Two",
+    "value": [2],
+    "frontImage": "Two"
+  },
+  {
+    "order": 42,
+    "suit": "clubs",
+    "name": "Three",
+    "value": [3],
+    "frontImage": "Three"
+  },
+  {
+    "order": 43,
+    "suit": "clubs",
+    "name": "Four",
+    "value": [4],
+    "frontImage": "Four"
+  },
+  {
+    "order": 44,
+    "suit": "clubs",
+    "name": "Five",
+    "value": [5],
+    "frontImage": "Five"
+  },
+  {
+    "order": 45,
+    "suit": "clubs",
+    "name": "Six",
+    "value": [6],
+    "frontImage": "Six"
+  },
+  {
+    "order": 46,
+    "suit": "clubs",
+    "name": "Seven",
+    "value": [7],
+    "frontImage": "Seven"
+  },
+  {
+    "order": 47,
+    "suit": "clubs",
+    "name": "Eight",
+    "value": [8],
+    "frontImage": "Eight"
+  },
+  {
+    "order": 48,
+    "suit": "clubs",
+    "name": "Nine",
+    "value": [9],
+    "frontImage": "Nine"
+  },
+  {
+    "order": 49,
+    "suit": "clubs",
+    "name": "Ten",
+    "value": [10],
+    "frontImage": "Ten"
+  },
+  {
+    "order": 50,
+    "suit": "clubs",
+    "name": "Jack",
+    "value": [10],
+    "frontImage": "Jack"
+  },
+  {
+    "order": 51,
+    "suit": "clubs",
+    "name": "Queen",
+    "value": [10],
+    "frontImage": "Queen"
+  },
+  {
+    "order": 52,
+    "suit": "clubs",
+    "name": "King",
+    "value": [10],
+    "frontImage": "King"
+  }
+]

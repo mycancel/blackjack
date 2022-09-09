@@ -1,0 +1,93 @@
+[
+  {
+    "order": 14,
+    "suit": "diamonds",
+    "name": "Ace",
+    "value": [1, 11],
+    "frontImage": "Ace"
+  },
+  {
+    "order": 15,
+    "suit": "diamonds",
+    "name": "Two",
+    "value": [2],
+    "frontImage": "Two"
+  },
+  {
+    "order": 16,
+    "suit": "diamonds",
+    "name": "Three",
+    "value": [3],
+    "frontImage": "Three"
+  },
+  {
+    "order": 17,
+    "suit": "diamonds",
+    "name": "Four",
+    "value": [4],
+    "frontImage": "Four"
+  },
+  {
+    "order": 18,
+    "suit": "diamonds",
+    "name": "Five",
+    "value": [5],
+    "frontImage": "Five"
+  },
+  {
+    "order": 19,
+    "suit": "diamonds",
+    "name": "Six",
+    "value": [6],
+    "frontImage": "Six"
+  },
+  {
+    "order": 20,
+    "suit": "diamonds",
+    "name": "Seven",
+    "value": [7],
+    "frontImage": "Seven"
+  },
+  {
+    "order": 21,
+    "suit": "diamonds",
+    "name": "Eight",
+    "value": [8],
+    "frontImage": "Eight"
+  },
+  {
+    "order": 22,
+    "suit": "diamonds",
+    "name": "Nine",
+    "value": [9],
+    "frontImage": "Nine"
+  },
+  {
+    "order": 23,
+    "suit": "diamonds",
+    "name": "Ten",
+    "value": [10],
+    "frontImage": "Ten"
+  },
+  {
+    "order": 24,
+    "suit": "diamonds",
+    "name": "Jack",
+    "value": [10],
+    "frontImage": "Jack"
+  },
+  {
+    "order": 25,
+    "suit": "diamonds",
+    "name": "Queen",
+    "value": [10],
+    "frontImage": "Queen"
+  },
+  {
+    "order": 26,
+    "suit": "diamonds",
+    "name": "King",
+    "value": [10],
+    "frontImage": "King"
+  }
+]
