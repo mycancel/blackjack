@@ -6,7 +6,7 @@ const resolvers = {
       const deck = await Deck.find().populate('cards').populate('inPlay');
       return deck;
     },
-    drawCard: async (_, order) => {
+    drawCard: async (_, { order }) => {
       return Card.findOne({ order: order });
     }
   },

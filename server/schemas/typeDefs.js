@@ -9,21 +9,21 @@ const typeDefs = gql`
 
   type Card {
     id: ID
-    order: Number!
+    order: Int!
     suit: String!
     name: String!
-    value: [Number]!
+    value: [Int]!
     frontImage: String!
   }
 
   type Query {
     getDeck: Deck
-    drawCard(order:Number!): Card
+    drawCard(order:Int): Card
   }
 
   type Mutation {
-    removeFromShoe(deckId:ID, order:Number): Deck
-    addToInPlay(deckId:ID, order:Number): Deck
+    removeFromShoe(deckId:ID, order:Int): Deck
+    addToInPlay(deckId:ID, order:Int): Deck
   }
 `;
 
