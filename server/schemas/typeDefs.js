@@ -17,7 +17,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    getDeck: Deck
+    getDeck: [Deck]
     drawCard(order:Int): Card
   }
 
