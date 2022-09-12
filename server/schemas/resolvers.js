@@ -12,13 +12,9 @@ const resolvers = {
   },
 
   Mutation: {
-    removeFromShoe: async (_, { deckId, order }) => {
-      const card = await Card.findOne({ order: order });
-      await Deck.findByIdAndUpdate(deckId, { $pull: { cards: card._id } });
-      return card;
-    },
     addToInPlay: async (_, { deckId, order }) => {
       const card = await Card.findOne({ order: order });
+      await Deck.findByIdAndUpdate(deckId, { $pull: { cards: card._id } });
       await Deck.findByIdAndUpdate(deckId, { $push: { inPlay: card._id } });
       return card;
     },
