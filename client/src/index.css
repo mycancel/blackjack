@@ -2,4 +2,11 @@ html, * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+  --alice-blue: #e8f1f2ff;
+  --granny-smith-apple: #b3efb2ff;
+  --russian-green: #7a9e7eff;
+  --pine-tree: #1f271bff;
+  --rose-madder: #e71d36ff;
+  --raisin-black: #1a1b25ff;
 }
