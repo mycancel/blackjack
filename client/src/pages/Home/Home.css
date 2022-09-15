@@ -5,13 +5,15 @@
   width: 100%;
   height: 100%;
   background-color: var(--granny-smith-apple);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #homeContent {
   background-color: var(--alice-blue);
   border-radius: 8px;
-  box-shadow: 8px 8px 3px 1px var(--russian-green)  ;
-  margin: 50% auto;
+  box-shadow: 8px 8px 3px 1px var(--russian-green);
   padding: 30px;
   border: 1px solid var(--light);
   width: 50%;
@@ -52,10 +54,27 @@
   #homeContent {
     width: 80%;
   }
+  #homeContent button {
+    margin: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 720px) {
   #homeContent {
     width: 90%;
+    height: 60%;
+    justify-content: space-evenly;
+  }
+  #homeContent button {
+    margin: .5rem;
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #homeContent {
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: 0px 8px 3px 1px var(--russian-green);
   }
 }
