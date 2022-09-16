@@ -3,7 +3,7 @@ import { drawNumber, startGame } from '../utils/helpers';
 import Hand from '../components/Hand';
 
 const Game = () => { 
-  // Use startGame helper to 'deal out' four cards to the player
+  // Use startGame helper to 'deal out' two cards to the player
   const [card, setCards] = useState(startGame());
   
   // When the value of card changes, localStorage is updated
