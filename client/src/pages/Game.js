@@ -1,8 +1,14 @@
 import React from 'react'
+import { drawNumber } from '../utils/helpers';
 
-const Game = () => {
+const Game = () => { 
   return (
-    <div>Game</div>
+    <>
+      {/* TODO: Navigation bar for going back to the home page */}
+      {/* TODO: Add main element with hand component and dealer component */}
+
+      <button onClick={drawNumber()}>Deck</button>
+    </>
   )
 }
 
