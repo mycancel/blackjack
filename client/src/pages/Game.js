@@ -3,8 +3,10 @@ import { drawNumber, startGame } from '../utils/helpers';
 import Hand from '../components/Hand';
 
 const Game = () => { 
-  // Use startGame helper to 'deal out' two cards to the player
+  // card will be used to represent the dealt out card(s)
   const [card, setCards] = useState(startGame());
+  // The hand wil be what the player is holding (array of integers)
+  const [hand, setHand] = useState([]);
   
   // When the value of card changes, localStorage is updated
   useEffect(() => {
@@ -19,6 +21,8 @@ const Game = () => {
     } else player.push(card);
     // Finally, localStorage is updated with the new 'player' array
     localStorage.setItem('player', JSON.stringify(player));
+    // and the hand is set to the updated array from localStorage
+    setHand(JSON.parse(localStorage.getItem('player')) || []);
   }, [card]);
 
   return (
@@ -27,7 +31,7 @@ const Game = () => {
       <button onClick={() => setCards(drawNumber())}>Deck</button>
       {/* TODO: Add main element with Hand component and dealer component */}
       <main>
-        <Hand />
+        <Hand player={hand}/>
       </main>
     </>
   )

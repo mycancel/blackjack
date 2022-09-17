@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Card from './Card';
 
-const Hand = () => {
+const Hand = ({ player }) => {
+  // TODO: Query card information
   return (
-    <div>Hand</div>
+    <div>
+      { player.map((card) => <Card order={card}/>)}
+    </div>
   )
 }
 
