@@ -12,3 +12,8 @@ export const startGame = () => {
   }
   return startCards;
 }
+
+// Returns a random number code for unique keys
+export const uuid = () => {
+  return Math.ceil(Math.random() * 100000);
+}

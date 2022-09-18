@@ -1,6 +1,7 @@
 import React from 'react'
 import { QUERY_DRAW_CARD } from '../utils/queries';
 import { useQuery } from '@apollo/client';
+import { uuid } from '../utils/helpers';
 
 const Card = ({ order }) => {
   const {loading, data} = useQuery(QUERY_DRAW_CARD, {
@@ -10,8 +11,8 @@ const Card = ({ order }) => {
 
   if (loading) {
     return (
-      <div key={Math.ceil(Math.random * 100000)}>
-        Hello
+      <div key={uuid()}>
+        Loading
       </div>
     )
   }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { drawNumber, startGame } from '../utils/helpers';
+import { drawNumber, startGame, uuid } from '../utils/helpers';
 import Card from '../components/Card';
 
 
@@ -32,7 +32,7 @@ const Game = () => {
       <button onClick={() => setCards(drawNumber())}>Deck</button>
       {/* TODO: Add main element with Hand component and dealer component */}
       <main>
-        {hand.map((card) => <Card key={Math.ceil(Math.random * 100000)} order={card}/>)}
+        {hand.map((card) => <Card key={uuid()} order={card}/>)}
       </main>
     </>
   )
