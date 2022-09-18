@@ -17,6 +17,7 @@ export const QUERY_GET_DECK = gql`
 export const QUERY_DRAW_CARD = gql`
   query DrawCard($order: Int!) {
     drawCard(order: $order) {
+      id
       order
       suit
       name

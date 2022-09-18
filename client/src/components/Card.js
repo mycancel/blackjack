@@ -18,9 +18,9 @@ const Card = ({ order }) => {
   }
 
   return (
-    <div key={card.order}>
-      <p>{card.name}</p>
-    </div>
+    <article key={card.id} className="card" id={JSON.stringify(card.value)}>
+      <p>{card.name} of {card.suit}</p>
+    </article>
   )
 }
 
