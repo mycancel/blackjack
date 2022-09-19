@@ -5,7 +5,7 @@ import Hand from '../components/Hand';
 const Game = () => { 
   // card will be used to represent the dealt out card(s)
   const [card, setCards] = useState(startGame());
-  // The hand wil be what the player is holding (array of integers)
+  // The hand will be what the player is holding (array of integers)
   const [hand, setHand] = useState([]);
   
   // When the value of card changes, localStorage is updated

@@ -19,7 +19,13 @@ const Card = ({ order }) => {
   }
 
   return (
-      <img src={card.frontImage} alt={alt} key={card.id} className="card" id={JSON.stringify(card.value)}></img>
+      <img 
+        src={card.frontImage} 
+        alt={alt} 
+        key={card.id} 
+        className="card" 
+        id={JSON.stringify(card.value)}>
+      </img>
   )
 }
 
