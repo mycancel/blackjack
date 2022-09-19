@@ -1,0 +1,27 @@
+body {
+  background-color: var(--russian-green);
+}
+
+#hit {
+  border: none;
+  padding: 3rem;
+  border-radius: 1rem;
+  font-size: 3rem;
+  margin: 2rem;
+}
+
+.dealer {
+  border-bottom: .5rem solid var(--alice-blue);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 8px;
+  margin: 1rem;
+}

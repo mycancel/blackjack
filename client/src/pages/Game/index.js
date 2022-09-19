@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { drawNumber, startGame } from '../utils/helpers';
-import Hand from '../components/Hand';
-import Dealer from '../components/Dealer';
+import { drawNumber, startGame } from '../../utils/helpers';
+import Hand from '../../components/Hand';
+import Dealer from '../../components/Dealer';
+import './Game.css';
 
 // TODO: add persistence on refresh
 
@@ -43,19 +44,20 @@ const Game = () => {
 
   return (
     <>
-      {/* TODO: Navigation bar for going back to the home page */}
-      <button onClick={() => {
+      {/* TODO: Navigation bar for going back to the home page and tutorial*/}
+      <button 
+        id='hit'
+        onClick={() => {
           setPlayerDraw(drawNumber());
           setTurn(turn + 1);
         }}>
-        Deck
+        Hit
       </button>
-      {/* TODO: Add main element with Hand component and dealer component */}
       <main>
         <Dealer hand={dealerHand} turn={turn}/>
         <Hand hand={hand} />
       </main>
-      {/* TODO: Footer that tallies up the value of points from the player */}
+      {/* TODO: Footer that tallies up the value of points from the player and dealer */}
     </>
   )
 }
