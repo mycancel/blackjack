@@ -8,6 +8,7 @@ const Card = ({ order }) => {
     variables: {order: order}
   });
   const card = data?.drawCard;
+  const alt = card?.name + " of " + card?.suit;
 
   if (loading) {
     return (
@@ -19,7 +20,7 @@ const Card = ({ order }) => {
 
   return (
     <article key={card.id} className="card" id={JSON.stringify(card.value)}>
-      <p>{card.name} of {card.suit}</p>
+      <img src={card.frontImage} alt={alt}></img>
     </article>
   )
 }
