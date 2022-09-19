@@ -4,364 +4,364 @@
     "suit": "Hearts",
     "name": "Ace",
     "value": [1, 11],
-    "frontImage": "Ace"
+    "frontImage": "/images/A-hearts.jpg"
   },
   {
     "order": 2,
     "suit": "Hearts",
     "name": "Two",
     "value": [2],
-    "frontImage": "Two"
+    "frontImage": "/images/2-hearts.jpg"
   },
   {
     "order": 3,
     "suit": "Hearts",
     "name": "Three",
     "value": [3],
-    "frontImage": "Three"
+    "frontImage": "/images/3-hearts.jpg"
   },
   {
     "order": 4,
     "suit": "Hearts",
     "name": "Four",
     "value": [4],
-    "frontImage": "Four"
+    "frontImage": "/images/4-hearts.jpg"
   },
   {
     "order": 5,
     "suit": "Hearts",
     "name": "Five",
     "value": [5],
-    "frontImage": "Five"
+    "frontImage": "/images/5-hearts.jpg"
   },
   {
     "order": 6,
     "suit": "Hearts",
     "name": "Six",
     "value": [6],
-    "frontImage": "Six"
+    "frontImage": "/images/6-hearts.jpg"
   },
   {
     "order": 7,
     "suit": "Hearts",
     "name": "Seven",
     "value": [7],
-    "frontImage": "Seven"
+    "frontImage": "/images/7-hearts.jpg"
   },
   {
     "order": 8,
     "suit": "Hearts",
     "name": "Eight",
     "value": [8],
-    "frontImage": "Eight"
+    "frontImage": "/images/8-hearts.jpg"
   },
   {
     "order": 9,
     "suit": "Hearts",
     "name": "Nine",
     "value": [9],
-    "frontImage": "Nine"
+    "frontImage": "/images/9-hearts.jpg"
   },
   {
     "order": 10,
     "suit": "Hearts",
     "name": "Ten",
     "value": [10],
-    "frontImage": "Ten"
+    "frontImage": "/images/10-hearts.jpg"
   },
   {
     "order": 11,
     "suit": "Hearts",
     "name": "Jack",
     "value": [10],
-    "frontImage": "Jack"
+    "frontImage": "/images/J-hearts.jpg"
   },
   {
     "order": 12,
     "suit": "Hearts",
     "name": "Queen",
     "value": [10],
-    "frontImage": "Queen"
+    "frontImage": "/images/Q-hearts.jpg"
   },
   {
     "order": 13,
     "suit": "Hearts",
     "name": "King",
     "value": [10],
-    "frontImage": "King"
+    "frontImage": "/images/K-hearts.jpg"
   },
   {
     "order": 14,
     "suit": "Diamonds",
     "name": "Ace",
     "value": [1, 11],
-    "frontImage": "Ace"
+    "frontImage": "/images/A-diamonds.jpg"
   },
   {
     "order": 15,
     "suit": "Diamonds",
     "name": "Two",
     "value": [2],
-    "frontImage": "Two"
+    "frontImage": "/images/2-diamonds.jpg"
   },
   {
     "order": 16,
     "suit": "Diamonds",
     "name": "Three",
     "value": [3],
-    "frontImage": "Three"
+    "frontImage": "/images/3-diamonds.jpg"
   },
   {
     "order": 17,
     "suit": "Diamonds",
     "name": "Four",
     "value": [4],
-    "frontImage": "Four"
+    "frontImage": "/images/4-diamonds.jpg"
   },
   {
     "order": 18,
     "suit": "Diamonds",
     "name": "Five",
     "value": [5],
-    "frontImage": "Five"
+    "frontImage": "/images/5-diamonds.jpg"
   },
   {
     "order": 19,
     "suit": "Diamonds",
     "name": "Six",
     "value": [6],
-    "frontImage": "Six"
+    "frontImage": "/images/6-diamonds.jpg"
   },
   {
     "order": 20,
     "suit": "Diamonds",
     "name": "Seven",
     "value": [7],
-    "frontImage": "Seven"
+    "frontImage": "/images/7-diamonds.jpg"
   },
   {
     "order": 21,
     "suit": "Diamonds",
     "name": "Eight",
     "value": [8],
-    "frontImage": "Eight"
+    "frontImage": "/images/8-diamonds.jpg"
   },
   {
     "order": 22,
     "suit": "Diamonds",
     "name": "Nine",
     "value": [9],
-    "frontImage": "Nine"
+    "frontImage": "/images/9-diamonds.jpg"
   },
   {
     "order": 23,
     "suit": "Diamonds",
     "name": "Ten",
     "value": [10],
-    "frontImage": "Ten"
+    "frontImage": "/images/10-diamonds.jpg"
   },
   {
     "order": 24,
     "suit": "Diamonds",
     "name": "Jack",
     "value": [10],
-    "frontImage": "Jack"
+    "frontImage": "/images/J-diamonds.jpg"
   },
   {
     "order": 25,
     "suit": "Diamonds",
     "name": "Queen",
     "value": [10],
-    "frontImage": "Queen"
+    "frontImage": "/images/Q-diamonds.jpg"
   },
   {
     "order": 26,
     "suit": "Diamonds",
     "name": "King",
     "value": [10],
-    "frontImage": "King"
+    "frontImage": "/images/K-diamonds.jpg"
   },
   {
     "order": 27,
     "suit": "Spades",
     "name": "Ace",
     "value": [1, 11],
-    "frontImage": "Ace"
+    "frontImage": "/images/A-spades.jpg"
   },
   {
     "order": 28,
     "suit": "Spades",
     "name": "Two",
     "value": [2],
-    "frontImage": "Two"
+    "frontImage": "/images/2-spades.jpg"
   },
   {
     "order": 29,
     "suit": "Spades",
     "name": "Three",
     "value": [3],
-    "frontImage": "Three"
+    "frontImage": "/images/3-spades.jpg"
   },
   {
     "order": 30,
     "suit": "Spades",
     "name": "Four",
     "value": [4],
-    "frontImage": "Four"
+    "frontImage": "/images/4-spades.jpg"
   },
   {
     "order": 31,
     "suit": "Spades",
     "name": "Five",
     "value": [5],
-    "frontImage": "Five"
+    "frontImage": "/images/5-spades.jpg"
   },
   {
     "order": 32,
     "suit": "Spades",
     "name": "Six",
     "value": [6],
-    "frontImage": "Six"
+    "frontImage": "/images/6-spades.jpg"
   },
   {
     "order": 33,
     "suit": "Spades",
     "name": "Seven",
     "value": [7],
-    "frontImage": "Seven"
+    "frontImage": "/images/7-spades.jpg"
   },
   {
     "order": 34,
     "suit": "Spades",
     "name": "Eight",
     "value": [8],
-    "frontImage": "Eight"
+    "frontImage": "/images/8-spades.jpg"
   },
   {
     "order": 35,
     "suit": "Spades",
     "name": "Nine",
     "value": [9],
-    "frontImage": "Nine"
+    "frontImage": "/images/9-spades.jpg"
   },
   {
     "order": 36,
     "suit": "Spades",
     "name": "Ten",
     "value": [10],
-    "frontImage": "Ten"
+    "frontImage": "/images/10-spades.jpg"
   },
   {
     "order": 37,
     "suit": "Spades",
     "name": "Jack",
     "value": [10],
-    "frontImage": "Jack"
+    "frontImage": "/images/J-spades.jpg"
   },
   {
     "order": 38,
     "suit": "Spades",
     "name": "Queen",
     "value": [10],
-    "frontImage": "Queen"
+    "frontImage": "/images/Q-spades.jpg"
   },
   {
     "order": 39,
     "suit": "Spades",
     "name": "King",
     "value": [10],
-    "frontImage": "King"
+    "frontImage": "/images/K-spades.jpg"
   },
   {
     "order": 40,
     "suit": "Clubs",
     "name": "Ace",
     "value": [1, 11],
-    "frontImage": "Ace"
+    "frontImage": "/images/A-clubs.jpg"
   },
   {
     "order": 41,
     "suit": "Clubs",
     "name": "Two",
     "value": [2],
-    "frontImage": "Two"
+    "frontImage": "/images/2-clubs.jpg"
   },
   {
     "order": 42,
     "suit": "Clubs",
     "name": "Three",
     "value": [3],
-    "frontImage": "Three"
+    "frontImage": "/images/3-clubs.jpg"
   },
   {
     "order": 43,
     "suit": "Clubs",
     "name": "Four",
     "value": [4],
-    "frontImage": "Four"
+    "frontImage": "/images/4-clubs.jpg"
   },
   {
     "order": 44,
     "suit": "Clubs",
     "name": "Five",
     "value": [5],
-    "frontImage": "Five"
+    "frontImage": "/images/5-clubs.jpg"
   },
   {
     "order": 45,
     "suit": "Clubs",
     "name": "Six",
     "value": [6],
-    "frontImage": "Six"
+    "frontImage": "/images/6-clubs.jpg"
   },
   {
     "order": 46,
     "suit": "Clubs",
     "name": "Seven",
     "value": [7],
-    "frontImage": "Seven"
+    "frontImage": "/images/7-clubs.jpg"
   },
   {
     "order": 47,
     "suit": "Clubs",
     "name": "Eight",
     "value": [8],
-    "frontImage": "Eight"
+    "frontImage": "/images/8-clubs.jpg"
   },
   {
     "order": 48,
     "suit": "Clubs",
     "name": "Nine",
     "value": [9],
-    "frontImage": "Nine"
+    "frontImage": "/images/9-clubs.jpg"
   },
   {
     "order": 49,
     "suit": "Clubs",
     "name": "Ten",
     "value": [10],
-    "frontImage": "Ten"
+    "frontImage": "/images/10-clubs.jpg"
   },
   {
     "order": 50,
     "suit": "Clubs",
     "name": "Jack",
     "value": [10],
-    "frontImage": "Jack"
+    "frontImage": "/images/J-clubs.jpg"
   },
   {
     "order": 51,
     "suit": "Clubs",
     "name": "Queen",
     "value": [10],
-    "frontImage": "Queen"
+    "frontImage": "/images/Q-clubs.jpg"
   },
   {
     "order": 52,
     "suit": "Clubs",
     "name": "King",
     "value": [10],
-    "frontImage": "King"
+    "frontImage": "/images/K-clubs.jpg"
   }
 ]
 
