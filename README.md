@@ -18,9 +18,11 @@ This project is a stepping stone in a personal goal to create a card game. There
 
 This site is currently in development, so some visuals may be outdated.
 
-Pictures Last Updated: September 15th, 2022
+Pictures Last Updated: September 19th, 2022
 
 ![Home Page](./readme-images/homepage.png)
+
+![Game](./readme-images/BlackJack-game.png)
 
 ## Acknowledgements 
 
