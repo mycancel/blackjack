@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { drawNumber, startGame, uuid } from '../utils/helpers';
-import Card from '../components/Card';
-
+import { drawNumber, startGame } from '../utils/helpers';
+import Hand from '../components/Hand';
 
 const Game = () => { 
   // card will be used to represent the dealt out card(s)
@@ -32,7 +31,7 @@ const Game = () => {
       <button onClick={() => setCards(drawNumber())}>Deck</button>
       {/* TODO: Add main element with Hand component and dealer component */}
       <main>
-        {hand.map((card) => <Card key={uuid()} order={card}/>)}
+        <Hand hand={hand} />
       </main>
     </>
   )
