@@ -15,26 +15,25 @@ const Game = () => {
   
   // When the value of playerDraw changes, localStorage is updated
   useEffect(() => {
-    // 'player' array is recieved from localStorage
-    const player = JSON.parse(localStorage.getItem('player')) || [];
-    // If playerDraw is an object, each element of the object is added to the 'player' array
-    if (typeof playerDraw === 'object') playerDraw.forEach((num) => player.push(num));
-    // If the playerDraw is not an object, it will be a number.
-    // So that is added to the 'player' array
-    else player.push(playerDraw);
-    // Finally, localStorage is updated with the new 'player' array
-    localStorage.setItem('player', JSON.stringify(player));
-    // and the hand is set to the updated array from localStorage
-    setHand(JSON.parse(localStorage.getItem('player')) || []);
+      // 'player' array is recieved from localStorage
+      const player = JSON.parse(localStorage.getItem('player')) || [];
+      // If playerDraw is an object, each element of the object is added to the 'player' array
+      if (typeof playerDraw === 'object') playerDraw.forEach((num) => player.push(num));
+      // If the playerDraw is not an object, it will be a number.
+      // So that is added to the 'player' array
+      else player.push(playerDraw);
+      // Finally, localStorage is updated with the new 'player' array
+      localStorage.setItem('player', JSON.stringify(player));
+      // and the hand is set to the updated array from localStorage
+      setHand(JSON.parse(localStorage.getItem('player')) || []);
   }, [playerDraw]);
 
   // When the value of dealerDraw changes, localStorage is updated in a similar way as 'player'
   // TODO: Fix Local Storage for Dealer
   useEffect(() => {
     const dealer = JSON.parse(localStorage.getItem('dealer')) || [];
-    if (typeof dealerDraw === 'object') dealer.forEach((num) => dealer.push(num));
+    if (typeof dealerDraw === 'object') dealerDraw.forEach((num) => dealer.push(num));
     else dealer.push(dealerDraw);
-    console.log(dealer);
     localStorage.setItem('dealer', JSON.stringify(dealer));
     setDealer(JSON.parse(localStorage.getItem('dealer')));
   }, [dealerDraw])
