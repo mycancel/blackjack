@@ -3,6 +3,8 @@ import { drawNumber, startGame } from '../utils/helpers';
 import Hand from '../components/Hand';
 import Dealer from '../components/Dealer';
 
+// TODO: add persistence on refresh
+
 const Game = () => { 
   // playerDraw will be used to represent the card(s) dealt to the player
   const [playerDraw, setPlayerDraw] = useState(startGame());
@@ -12,6 +14,8 @@ const Game = () => {
   const [hand, setHand] = useState([]);
   // The dealer will be what the dealer is holding (array of integers)
   const [dealerHand, setDealer]= useState([]);
+  // The turn state will determine who is able to be dealt cards (player starts on turn 1)
+  const [turn, setTurn] = useState(1);
   
   // When the value of playerDraw changes, localStorage is updated
   useEffect(() => {
@@ -29,7 +33,6 @@ const Game = () => {
   }, [playerDraw]);
 
   // When the value of dealerDraw changes, localStorage is updated in a similar way as 'player'
-  // TODO: Fix Local Storage for Dealer
   useEffect(() => {
     const dealer = JSON.parse(localStorage.getItem('dealer')) || [];
     if (typeof dealerDraw === 'object') dealerDraw.forEach((num) => dealer.push(num));
@@ -41,10 +44,15 @@ const Game = () => {
   return (
     <>
       {/* TODO: Navigation bar for going back to the home page */}
-      <button onClick={() => setPlayerDraw(drawNumber())}>Deck</button>
+      <button onClick={() => {
+          setPlayerDraw(drawNumber());
+          setTurn(turn + 1);
+        }}>
+        Deck
+      </button>
       {/* TODO: Add main element with Hand component and dealer component */}
       <main>
-        <Dealer hand={dealerHand}/>
+        <Dealer hand={dealerHand} turn={turn}/>
         <Hand hand={hand} />
       </main>
       {/* TODO: Footer that tallies up the value of points from the player */}
