@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { drawNumber, startGame } from '../../utils/helpers';
 import Hand from '../../components/Hand';
 import Dealer from '../../components/Dealer';
+import Footer from '../../components/Footer'
 import './Game.css';
 
 // TODO: add persistence on refresh
@@ -45,19 +46,15 @@ const Game = () => {
   return (
     <>
       {/* TODO: Navigation bar for going back to the home page and tutorial*/}
-      <button 
-        id='hit'
-        onClick={() => {
-          setPlayerDraw(drawNumber());
-          setTurn(turn + 1);
-        }}>
-        Hit
-      </button>
       <main>
         <Dealer hand={dealerHand} turn={turn}/>
         <Hand hand={hand} />
       </main>
       {/* TODO: Footer that tallies up the value of points from the player and dealer */}
+      <Footer 
+        setPlayerDraw={setPlayerDraw} 
+        setTurn={setTurn} 
+        turn={turn}/>
     </>
   )
 }
