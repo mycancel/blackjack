@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home'
 import Game from './pages/Game';
 import Tutorial from './pages/Tutorial';
+import { GameProvider } from './utils/GameContext';
 
 const client = new ApolloClient({
   uri: '/graphQL',
@@ -20,11 +21,13 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/game" element={<Game />} />
-            <Route path="/tutorial" element={<Tutorial />} />
-          </Routes>
+          <GameProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/game" element={<Game />} />
+              <Route path="/tutorial" element={<Tutorial />} />
+            </Routes>
+          </GameProvider>
         </>
       </Router>
     </ApolloProvider>
