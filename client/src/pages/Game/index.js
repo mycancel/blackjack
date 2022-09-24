@@ -48,9 +48,7 @@ const Game = () => {
         <Dealer hand={dealerHand}/>
         <Hand hand={hand} />
       </main>
-      {/* TODO: Footer that tallies up the value of points from the player and dealer */}
-      <Footer 
-        setPlayerDraw={setPlayerDraw}/>
+      <Footer setPlayerDraw={setPlayerDraw}/>
     </>
   )
 }

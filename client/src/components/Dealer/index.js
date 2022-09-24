@@ -16,7 +16,7 @@ const Dealer = ({ hand }) => {
   else {
     return (
       <article className="dealer firstRound">
-        {hand.map((card) => <Card key={uuid()} order={card}/>)}
+        {hand.map((card) => <Card key={uuid()} order={card} handOwner="dealer"/>)}
       </article>
     )
   }
