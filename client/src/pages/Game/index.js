@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { drawNumber, startGame } from '../../utils/helpers';
+import { startGame } from '../../utils/helpers';
 import Hand from '../../components/Hand';
 import Dealer from '../../components/Dealer';
 import Footer from '../../components/Footer'
@@ -16,8 +16,6 @@ const Game = () => {
   const [hand, setHand] = useState([]);
   // The dealer will be what the dealer is holding (array of integers)
   const [dealerHand, setDealer]= useState([]);
-  // The turn state will determine who is able to be dealt cards (player starts on turn 1)
-  const [turn, setTurn] = useState(1);
   
   // When the value of playerDraw changes, localStorage is updated
   useEffect(() => {
@@ -47,14 +45,12 @@ const Game = () => {
     <>
       {/* TODO: Navigation bar for going back to the home page and tutorial*/}
       <main>
-        <Dealer hand={dealerHand} turn={turn}/>
+        <Dealer hand={dealerHand}/>
         <Hand hand={hand} />
       </main>
       {/* TODO: Footer that tallies up the value of points from the player and dealer */}
       <Footer 
-        setPlayerDraw={setPlayerDraw} 
-        setTurn={setTurn} 
-        turn={turn}/>
+        setPlayerDraw={setPlayerDraw}/>
     </>
   )
 }
