@@ -4,7 +4,6 @@ import { useGameContext } from '../utils/GameContext';
 
 const Footer = ({setPlayerDraw}) => {
   const {turn, incrementTurn} = useGameContext();
-  // console.log(turn);
   return (
     <footer>
         <button 
