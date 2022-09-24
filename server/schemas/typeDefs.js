@@ -12,7 +12,7 @@ const typeDefs = gql`
     order: Int
     suit: String
     name: String
-    value: [Int]
+    value: Int
     frontImage: String
   }
 

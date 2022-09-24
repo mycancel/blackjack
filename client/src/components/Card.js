@@ -23,13 +23,14 @@ const Card = ({ order, handOwner }) => {
     )
   }
 
+  console.log(card?.value);
+
   return (
       <img 
         src={card.frontImage} 
         alt={alt} 
         key={card.id} 
-        className="card" 
-        id={JSON.stringify(card.value)}>
+        className="card">
       </img>
   )
 }

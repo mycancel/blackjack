@@ -15,7 +15,7 @@ const cardSchema = new Schema({
     required: true
   },
   value: {
-    type: [Number],
+    type: Number,
     required: true
   },
   frontImage: {
