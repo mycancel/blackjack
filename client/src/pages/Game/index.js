@@ -19,8 +19,6 @@ const Game = () => {
   // The Total state keeps record of the value of the dealers and players cards
   const [dealerTotal, setDealerTotal] = useState(0);
   const [playerTotal, setPlayerTotal] = useState(0);
-  // console.log("d ", dealerTotal);
-  // console.log("p ", playerTotal);
   
   // When the value of hand changes, localStorage is updated
   useEffect(() => {
@@ -47,6 +45,8 @@ const Game = () => {
   return (
     <>
       {/* TODO: Navigation bar for going back to the home page and tutorial*/}
+      {/* TODO: Add way for dealer to play their turn based on the value of their hand */}
+      {/* TODO: Create win/bust condition (including natural win) and reset screen */}
       <main>
         <Dealer hand={dealerHand} dealerLength={dealerHand.length} setDealerTotal={setDealerTotal}/>
         <Hand hand={hand} playerLength={hand.length} setPlayerTotal={setPlayerTotal}/>

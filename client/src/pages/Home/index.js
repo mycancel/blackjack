@@ -7,6 +7,7 @@ const Home = () => {
     <section id='homeSection'>
       <div id='homeContent'>
         <h1>Black<span>Jack</span></h1>
+        {/* TODO: Toggle Gamestate to change button textContent */}
         <Link 
           to='/game'>
           <button>Play</button>

@@ -2,7 +2,7 @@ body {
   background-color: var(--russian-green);
 }
 
-#hit {
+#hit, #stand {
   border: none;
   padding: 3rem;
   border-radius: 1rem;
