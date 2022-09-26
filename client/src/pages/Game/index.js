@@ -5,12 +5,10 @@ import Dealer from '../../components/Dealer';
 import Footer from '../../components/Footer'
 import './Game.css';
 
-// TODO: add persistence on refresh
-
 const Game = () => { 
   // When the game starts, there will most likely be nothing in the local Storage,
   // Thus, the helper startGame will return an array of two numbers
-  // However, if there is something stored, the stored array will populate the hands
+  // However, if there is something stored, the stored array will populate the hands/values
   const playerAtStartOrRefresh = JSON.parse(localStorage.getItem('player')) || startGame();
   const dealerAtStartOrRefresh = JSON.parse(localStorage.getItem('dealer')) || startGame();
 
@@ -18,9 +16,11 @@ const Game = () => {
   const [hand, setHand] = useState(playerAtStartOrRefresh);
   // The dealer will be what the dealer is holding (array of integers)
   const [dealerHand, setDealer]= useState(dealerAtStartOrRefresh);
-  // The Count state keeps record of the value of the dealers and players cards
-  const [dealerCount, setDealerCount] = useState(0);
-  const [playerCount, setPlayerCount] = useState(0);
+  // The Total state keeps record of the value of the dealers and players cards
+  const [dealerTotal, setDealerTotal] = useState(0);
+  const [playerTotal, setPlayerTotal] = useState(0);
+  // console.log("d ", dealerTotal);
+  // console.log("p ", playerTotal);
   
   // When the value of hand changes, localStorage is updated
   useEffect(() => {
@@ -44,32 +44,12 @@ const Game = () => {
     }
   }, [dealerHand]);
 
-  // TODO: Fix Duplication of values
-  // When the value of dealerCount changes, localStorage is updated in a similar way as 'player'
-  useEffect(() => {
-    if (dealerCount) {
-      const dValues = JSON.parse(localStorage.getItem('dValues')) || [];
-      dValues.push(dealerCount);
-      localStorage.setItem('dValues', JSON.stringify(dValues));
-    }
-  }, [dealerCount])
-
-  // TODO: Fix Duplication of values
-  // When the value of playerCount changes, localStorage is updated in a similar way as 'player'
-  useEffect(() => {
-    if (playerCount) {
-      const pValues = JSON.parse(localStorage.getItem('pValues')) || [];
-      pValues.push(playerCount);
-      localStorage.setItem('pValues', JSON.stringify(pValues));
-    }
-  }, [playerCount])
-
   return (
     <>
       {/* TODO: Navigation bar for going back to the home page and tutorial*/}
       <main>
-        <Dealer hand={dealerHand} setDealerCount={setDealerCount}/>
-        <Hand hand={hand} setPlayerCount={setPlayerCount}/>
+        <Dealer hand={dealerHand} dealerLength={dealerHand.length} setDealerTotal={setDealerTotal}/>
+        <Hand hand={hand} playerLength={hand.length} setPlayerTotal={setPlayerTotal}/>
       </main>
       <Footer hand={hand} setHand={setHand}/>
     </>
