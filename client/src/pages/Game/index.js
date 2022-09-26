@@ -16,9 +16,13 @@ const Game = () => {
   const [hand, setHand] = useState([]);
   // The dealer will be what the dealer is holding (array of integers)
   const [dealerHand, setDealer]= useState([]);
+  // The Count state keeps record of the value of the dealers and players cards
+  const [dealerCount, setDealerCount] = useState(0);
+  const [playerCount, setPlayerCount] = useState(0);
   
   // When the value of playerDraw changes, localStorage is updated
   useEffect(() => {
+    if (playerDraw) {
       // 'player' array is recieved from localStorage
       const player = JSON.parse(localStorage.getItem('player')) || [];
       // If playerDraw is an object, each element of the object is added to the 'player' array
@@ -30,23 +34,46 @@ const Game = () => {
       localStorage.setItem('player', JSON.stringify(player));
       // and the hand is set to the updated array from localStorage
       setHand(JSON.parse(localStorage.getItem('player')) || []);
+    }
   }, [playerDraw]);
 
   // When the value of dealerDraw changes, localStorage is updated in a similar way as 'player'
   useEffect(() => {
-    const dealer = JSON.parse(localStorage.getItem('dealer')) || [];
-    if (typeof dealerDraw === 'object') dealerDraw.forEach((num) => dealer.push(num));
-    else dealer.push(dealerDraw);
-    localStorage.setItem('dealer', JSON.stringify(dealer));
-    setDealer(JSON.parse(localStorage.getItem('dealer')));
+    if (dealerDraw) {
+      const dealer = JSON.parse(localStorage.getItem('dealer')) || [];
+      if (typeof dealerDraw === 'object') dealerDraw.forEach((num) => dealer.push(num));
+      else dealer.push(dealerDraw);
+      localStorage.setItem('dealer', JSON.stringify(dealer));
+      setDealer(JSON.parse(localStorage.getItem('dealer')));
+    }
   }, [dealerDraw])
+
+  // TODO: Fix Duplication of values
+  // When the value of dealerCount changes, localStorage is updated in a similar way as 'player'
+  useEffect(() => {
+    if (dealerCount) {
+      const dValues = JSON.parse(localStorage.getItem('dValues')) || [];
+      dValues.push(dealerCount);
+      localStorage.setItem('dValues', JSON.stringify(dValues));
+    }
+  }, [dealerCount])
+
+  // TODO: Fix Duplication of values
+  // When the value of playerCount changes, localStorage is updated in a similar way as 'player'
+  useEffect(() => {
+    if (playerCount) {
+      const pValues = JSON.parse(localStorage.getItem('pValues')) || [];
+      pValues.push(playerCount);
+      localStorage.setItem('pValues', JSON.stringify(pValues));
+    }
+  }, [playerCount])
 
   return (
     <>
       {/* TODO: Navigation bar for going back to the home page and tutorial*/}
       <main>
-        <Dealer hand={dealerHand}/>
-        <Hand hand={hand} />
+        <Dealer hand={dealerHand} setDealerCount={setDealerCount}/>
+        <Hand hand={hand} setPlayerCount={setPlayerCount}/>
       </main>
       <Footer setPlayerDraw={setPlayerDraw}/>
     </>

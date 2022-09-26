@@ -1,19 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { QUERY_DRAW_CARD } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 import { uuid } from '../utils/helpers';
-import { useGameContext } from '../utils/GameContext';
 
-const Card = ({ order, handOwner }) => {
-  const { addDealerCount, addPlayerCount, incrementDealerAce, incrementPlayerAce } = useGameContext();
+const Card = ({ order, setCardValue }) => {
   const {loading, data} = useQuery(QUERY_DRAW_CARD, {
     variables: {order: order}
   });
+
   const card = data?.drawCard;
   const alt = card?.name + ' of ' + card?.suit;
 
-  if (card?.name === 'Ace' && handOwner === 'dealer') console.log('incrementDealer');
-  if (card?.name === 'Ace' && handOwner === 'player') console.log('incrementPlayer');
+  useEffect(() => {
+    if (card) {
+      setCardValue(card?.value)
+    }
+  });
 
   if (loading) {
     return (
@@ -22,8 +24,6 @@ const Card = ({ order, handOwner }) => {
       </div>
     )
   }
-
-  console.log(card?.value);
 
   return (
       <img 

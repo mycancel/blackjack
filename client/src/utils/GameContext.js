@@ -11,24 +11,9 @@ export default function GameProvider ({ children }) {
   const [gameState, setGameState] = useState(false);
   // The turn state will determine who is able to be dealt cards (player starts on turn 1)
   const [turn, setTurn] = useState(1);
-  // The Count state keeps record of the value of the dealers and players cards
-  const [dealerCount, setDealerCount] = useState(0);
-  const [playerCount, setPlayerCount] = useState(0);
   // The Ace state keeps record of aces in dealers and players cards
   const [dealerAce, setDealerAce] = useState(0);
   const [playerAce, setPlayerAce] = useState(0);
-
-  const addDealerCount = (value) => {
-    const newDealer = value + dealerCount;
-    setDealerCount(newDealer);
-    console.log(dealerCount);
-  };
-
-  const addPlayerCount = (value) => {
-    const newPlayer = value + playerCount;
-    setPlayerCount(newPlayer);
-    console.log(playerCount);
-  }
 
   const incrementDealerAce = () => {
     setDealerAce((prev) => prev + 1);
@@ -47,15 +32,13 @@ export default function GameProvider ({ children }) {
   }
 
   const resetGame = () => {
-    setDealerCount(0);
-    setPlayerCount(0);
     setDealerAce(0);
     setPlayerAce(0);
     setTurn(1);
   }
 
   return (
-    <GameContext.Provider value={{ gameState, turn, dealerCount, dealerAce, playerCount, playerAce, addDealerCount, addPlayerCount, incrementDealerAce, incrementPlayerAce, incrementTurn, toggleGameState, resetGame}}>
+    <GameContext.Provider value={{ gameState, turn, dealerAce, playerAce, incrementDealerAce, incrementPlayerAce, incrementTurn, toggleGameState, resetGame}}>
       {children}
     </GameContext.Provider>
   )
