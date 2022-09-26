@@ -8,45 +8,41 @@ import './Game.css';
 // TODO: add persistence on refresh
 
 const Game = () => { 
-  // playerDraw will be used to represent the card(s) dealt to the player
-  const [playerDraw, setPlayerDraw] = useState(startGame());
-  // dealerDraw will be used to represent the card(s) dealt to the dealer
-  const [dealerDraw, setDealerDraw] = useState(startGame());
+  // When the game starts, there will most likely be nothing in the local Storage,
+  // Thus, the helper startGame will return an array of two numbers
+  // However, if there is something stored, the stored array will populate the hands
+  const playerAtStartOrRefresh = JSON.parse(localStorage.getItem('player')) || startGame();
+  const dealerAtStartOrRefresh = JSON.parse(localStorage.getItem('dealer')) || startGame();
+
   // The hand will be what the player is holding (array of integers)
-  const [hand, setHand] = useState([]);
+  const [hand, setHand] = useState(playerAtStartOrRefresh);
   // The dealer will be what the dealer is holding (array of integers)
-  const [dealerHand, setDealer]= useState([]);
+  const [dealerHand, setDealer]= useState(dealerAtStartOrRefresh);
   // The Count state keeps record of the value of the dealers and players cards
   const [dealerCount, setDealerCount] = useState(0);
   const [playerCount, setPlayerCount] = useState(0);
   
-  // When the value of playerDraw changes, localStorage is updated
+  // When the value of hand changes, localStorage is updated
   useEffect(() => {
-    if (playerDraw) {
-      // 'player' array is recieved from localStorage
-      const player = JSON.parse(localStorage.getItem('player')) || [];
-      // If playerDraw is an object, each element of the object is added to the 'player' array
-      if (typeof playerDraw === 'object') playerDraw.forEach((num) => player.push(num));
-      // If the playerDraw is not an object, it will be a number.
-      // So that is added to the 'player' array
-      else player.push(playerDraw);
-      // Finally, localStorage is updated with the new 'player' array
-      localStorage.setItem('player', JSON.stringify(player));
-      // and the hand is set to the updated array from localStorage
-      setHand(JSON.parse(localStorage.getItem('player')) || []);
+    // 'player' array is recieved from localStorage
+    const player = JSON.parse(localStorage.getItem('player')) || [];
+    // If what is stored in localStorage is not what is in the hand,
+    if( !player.length || player.length < hand.length) {
+      // localStorage is updated with the hand array
+      localStorage.setItem('player', JSON.stringify(hand));
     }
-  }, [playerDraw]);
+  }, [hand]);
 
-  // When the value of dealerDraw changes, localStorage is updated in a similar way as 'player'
+  // When the value of dealerHand changes, localStorage is updated in a similar way as 'hand'
   useEffect(() => {
-    if (dealerDraw) {
-      const dealer = JSON.parse(localStorage.getItem('dealer')) || [];
-      if (typeof dealerDraw === 'object') dealerDraw.forEach((num) => dealer.push(num));
-      else dealer.push(dealerDraw);
-      localStorage.setItem('dealer', JSON.stringify(dealer));
-      setDealer(JSON.parse(localStorage.getItem('dealer')));
+    // 'dealer' array is recieved from localStorage
+    const dealer = JSON.parse(localStorage.getItem('dealer')) || [];
+    // If what is stored in localStorage is not what is in the dealerHand
+    if( !dealer.length || dealer.length < dealerHand.length) {
+      // localStorage is updated with the dealerHand array
+      localStorage.setItem('dealer', JSON.stringify(dealerHand));
     }
-  }, [dealerDraw])
+  }, [dealerHand]);
 
   // TODO: Fix Duplication of values
   // When the value of dealerCount changes, localStorage is updated in a similar way as 'player'
@@ -75,7 +71,7 @@ const Game = () => {
         <Dealer hand={dealerHand} setDealerCount={setDealerCount}/>
         <Hand hand={hand} setPlayerCount={setPlayerCount}/>
       </main>
-      <Footer setPlayerDraw={setPlayerDraw}/>
+      <Footer hand={hand} setHand={setHand}/>
     </>
   )
 }
