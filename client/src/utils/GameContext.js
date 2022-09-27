@@ -16,8 +16,12 @@ export default function GameProvider ({ children }) {
     setTurn((prev) => prev + 1);
   }
 
-  const toggleGameState = () => {
-    setGameState((prev) => !prev);
+  const startGameState = () => {
+    setGameState(true);
+  }
+
+  const endGameState = () => {
+    setGameState(false);
   }
 
   const resetGame = () => {
@@ -25,7 +29,7 @@ export default function GameProvider ({ children }) {
   }
 
   return (
-    <GameContext.Provider value={{ gameState, turn, incrementTurn, toggleGameState, resetGame}}>
+    <GameContext.Provider value={{ gameState, turn, endGameState, incrementTurn, startGameState, resetGame}}>
       {children}
     </GameContext.Provider>
   )

@@ -1,16 +1,22 @@
 import React from 'react'
 import './Home.css';
 import { Link } from 'react-router-dom'
+import { useGameContext } from '../../utils/GameContext';
 
 const Home = () => {
+  const { gameState, startGameState } = useGameContext();
+
   return (
     <section id='homeSection'>
       <div id='homeContent'>
         <h1>Black<span>Jack</span></h1>
-        {/* TODO: Toggle Gamestate to change button textContent */}
         <Link 
-          to='/game'>
-          <button>Play</button>
+          to='/game'
+          onClick={() => startGameState()}
+          >
+          {gameState ? 
+            <button>Continue</button>
+          : <button>Play</button>}
         </Link>
         <Link
           to='/rules'>
