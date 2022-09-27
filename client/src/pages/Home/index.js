@@ -13,8 +13,8 @@ const Home = () => {
           <button>Play</button>
         </Link>
         <Link
-          to='/tutorial'>
-          <button>Tutorial</button>
+          to='/rules'>
+          <button>Rules</button>
         </Link>
       </div>
     </section>

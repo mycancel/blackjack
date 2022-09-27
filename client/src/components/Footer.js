@@ -2,12 +2,13 @@ import React from 'react';
 import { drawNumber } from '../utils/helpers';
 import { useGameContext } from '../utils/GameContext';
 
-const Footer = ({hand, setHand}) => {
+const Footer = ({hand, setHand, playerTotal}) => {
   const {turn, incrementTurn} = useGameContext();
   return (
     <footer>
         <button 
           id='hit'
+          className='gameBtn'
           // When the button is clicked,
           onClick={() => {
             // A new card (integer between 1 and 52) is drawn
@@ -22,9 +23,12 @@ const Footer = ({hand, setHand}) => {
           >
           Hit
         </button>
+        
+        <button className='total'>{playerTotal}</button>
 
         <button 
           id='stand'
+          className='gameBtn'
           // When the button is clicked,
           onClick={() => {
             // the turn is incremented, ending the player's turn

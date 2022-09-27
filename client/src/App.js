@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home'
 import Game from './pages/Game';
-import Tutorial from './pages/Tutorial';
+import Rules from './pages/Rules';
 import GameProvider from './utils/GameContext';
 
 const client = new ApolloClient({
@@ -25,7 +25,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/game" element={<Game />} />
-              <Route path="/tutorial" element={<Tutorial />} />
+              <Route path="/rules" element={<Rules />} />
             </Routes>
           </GameProvider>
         </>

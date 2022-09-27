@@ -3,6 +3,7 @@ import { drawNumber, startGame } from '../../utils/helpers';
 import Hand from '../../components/Hand';
 import Dealer from '../../components/Dealer';
 import Footer from '../../components/Footer'
+import Nav from '../../components/Nav'
 import './Game.css';
 import { useGameContext } from '../../utils/GameContext';
 
@@ -27,7 +28,6 @@ const Game = () => {
     // Once all of the dealer's cards are revealed (after the player's turn)
     // and if dealerTotal is less than 17,
     if (turn === 2 && dealerTotal < 17) {
-      console.log(dealerTotal);
       // A new card (integer between 1 and 52) is drawn
       const arr = [...dealerHand];
       const num = drawNumber();
@@ -64,13 +64,13 @@ const Game = () => {
 
   return (
     <>
-      {/* TODO: Navigation bar for going back to the home page and tutorial*/}
       {/* TODO: Create win/bust condition (including natural win) and reset screen */}
+      <Nav dealerTotal={dealerTotal}/>
       <main>
         <Dealer hand={dealerHand} dealerLength={dealerHand.length} setDealerTotal={setDealerTotal}/>
         <Hand hand={hand} playerLength={hand.length} setPlayerTotal={setPlayerTotal}/>
       </main>
-      <Footer hand={hand} setHand={setHand}/>
+      <Footer hand={hand} setHand={setHand} playerTotal={playerTotal}/>
     </>
   )
 }

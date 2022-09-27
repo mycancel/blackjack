@@ -2,12 +2,44 @@ body {
   background-color: var(--russian-green);
 }
 
-#hit, #stand {
+footer, nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameBtn {
   border: none;
-  padding: 3rem;
-  border-radius: 1rem;
-  font-size: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 3rem;
+  font-size: 2rem;
   margin: 2rem;
+  color: var(--pine-tree);
+  background-color: var(--granny-smith-apple);
+  cursor: pointer;
+}
+
+#hit {
+  padding-left: 4.25rem;
+  padding-right: 4.25rem;
+}
+
+.gameBtn:hover {
+  box-shadow: 5px 5px 5px var(--pine-tree);
+  background-color: rgb(165, 218, 164);
+}
+
+.total {
+  border: none;
+  padding: 2rem;
+  border-radius: 3rem;
+  font-size: 2rem;
+  margin: 2rem;
+  color: var(--pine-tree);
+  background-color: var(--alice-blue);
 }
 
 .dealer {
