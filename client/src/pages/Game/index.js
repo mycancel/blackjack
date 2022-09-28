@@ -4,6 +4,7 @@ import Hand from '../../components/Hand';
 import Dealer from '../../components/Dealer';
 import Footer from '../../components/Footer'
 import Nav from '../../components/Nav'
+import Reset from '../../components/Reset'
 import './Game.css';
 import { useGameContext } from '../../utils/GameContext';
 
@@ -71,6 +72,7 @@ const Game = () => {
         <Hand hand={hand} playerLength={hand.length} setPlayerTotal={setPlayerTotal}/>
       </main>
       <Footer hand={hand} setHand={setHand} playerTotal={playerTotal}/>
+      <Reset />
     </>
   )
 }
