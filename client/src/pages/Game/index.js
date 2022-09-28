@@ -25,6 +25,7 @@ const Game = () => {
   const [playerTotal, setPlayerTotal] = useState(0);
 
   // The Dealer's turn
+  // TODO: reveal hidden card if the visible card is an ace (check for blackjack)
   useEffect(() => {
     // Once all of the dealer's cards are revealed (after the player's turn)
     // and if dealerTotal is less than 17,
@@ -72,7 +73,7 @@ const Game = () => {
         <Hand hand={hand} playerLength={hand.length} setPlayerTotal={setPlayerTotal}/>
       </main>
       <Footer hand={hand} setHand={setHand} playerTotal={playerTotal}/>
-      <Reset />
+      <Reset dealer={dealerTotal} player={playerTotal}/>
     </>
   )
 }

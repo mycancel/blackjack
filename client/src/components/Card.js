@@ -26,6 +26,7 @@ const Card = ({ order,  handLength, setTotal, valueArray, hasHiddenCard = false 
         let total = valueArray.reduce((a,b) => a + b);
         // If the total is more than 21, but includes an ace (card value = 11),
         // The card value of the ace is reduced to '1'
+        // TODO: reduce by 10 multiplied by the number of aces in array
         if (total > 21 && valueArray.includes(11)) total = total - 10;
         // and set to either setPlayerTotal or setDealerTotal
         setTotal(total);
