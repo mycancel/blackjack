@@ -54,6 +54,7 @@ const Game = () => {
     } else if (turn === 2) {
       incrementTurn();
     }
+    // When the dealer's turn ends, the game ends.
     if (turn === 3) {
       showReset();
     }

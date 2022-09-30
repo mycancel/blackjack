@@ -10,7 +10,9 @@ const Dealer = ({ hand, dealerLength, setDealerTotal }) => {
   // The valueArray is assigned an empty array
   const valueArray = [];
 
-  if (turn > 1 || hand.length > 2) {
+  // If it is not the player's turn (turn === 1), it is the dealer's turn
+  // and both cards are revealed.
+  if (turn > 1) {
     return (
       <article className="dealer">
         {hand.map((card) => <Card key={uuid()} order={card} handLength={dealerLength} setTotal={setDealerTotal} valueArray={valueArray}/>)}
