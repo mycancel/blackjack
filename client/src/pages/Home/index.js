@@ -12,11 +12,10 @@ const Home = () => {
         <h1>Black<span>Jack</span></h1>
         <Link 
           to='/game'
-          onClick={() => startGameState()}
           >
           {gameState ? 
             <button>Continue</button>
-          : <button>Play</button>}
+          : <button onClick={() => startGameState()}>Play</button>}
         </Link>
         <Link
           to='/rules'>

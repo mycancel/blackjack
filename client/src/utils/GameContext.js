@@ -26,6 +26,8 @@ export default function GameProvider ({ children }) {
 
   const resetGame = () => {
     setTurn(1);
+    localStorage.removeItem('player');
+    localStorage.removeItem('dealer');
   }
 
   return (
