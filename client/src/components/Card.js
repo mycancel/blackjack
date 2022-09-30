@@ -42,9 +42,11 @@ const Card = ({ order,  handLength, setTotal, valueArray, hasHiddenCard = false 
 
   if (loading) {
     return (
-      <div key={uuid()}>
-        Loading
-      </div>
+      <img 
+        key={uuid()}
+        alt='Loading'
+        src='/images/backImage.jpg'>
+      </img>
     )
   }
 
