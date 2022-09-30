@@ -12,6 +12,21 @@ const Card = ({ order,  handLength, setTotal, valueArray, hasHiddenCard = false 
   const card = data?.drawCard;
   const alt = card?.name + ' of ' + card?.suit;
 
+  // Aces have the value of 11 or 1
+  // This function decreases the value of ace(s) in the valueArray if the total is over 21
+  const adjustTotalForAces = (originalTotal, array) => {
+    // The number of aces and counted
+    const aceInstances = array.reduce((inst, el) => (el === 11 ? inst + 1 : inst), 0);
+    let newTotal = originalTotal;
+    // Then, the total is subtracted by 10 for each ace...
+    for (let i = 0; i < aceInstances; i++) {
+      newTotal = newTotal - 10;
+      // until the total is less than or equal to 21.
+      if (newTotal <= 21) break;
+    }
+    return newTotal;
+  }
+
   useEffect(() => {
     // When the data is found,
     if (data && card) {
@@ -25,9 +40,10 @@ const Card = ({ order,  handLength, setTotal, valueArray, hasHiddenCard = false 
         // The elements in the valueArray are added together
         let total = valueArray.reduce((a,b) => a + b);
         // If the total is more than 21, but includes an ace (card value = 11),
-        // The card value of the ace is reduced to '1'
-        // TODO: reduce by 10 multiplied by the number of aces in array
-        if (total > 21 && valueArray.includes(11)) total = total - 10;
+        if (total > 21 && valueArray.includes(11)) {
+          // The card value of each ace is reduced to '1' until total is less than 21
+          total = adjustTotalForAces(total, valueArray);
+        }
         // and set to either setPlayerTotal or setDealerTotal
         setTotal(total);
       // If there is a hidden card in the hand,
