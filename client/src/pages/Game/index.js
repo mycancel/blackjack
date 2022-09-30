@@ -24,12 +24,26 @@ const Game = () => {
   const [dealerTotal, setDealerTotal] = useState(0);
   const [playerTotal, setPlayerTotal] = useState(0);
 
+  // The endGame state indicates when the Reset component is revealed to the player
+  const [endGame, setEndGame] = useState(false);
+
+  const showReset = () => {
+    let time = 1;
+    const timeInterval = setInterval(function () {
+      -- time;
+      if (time === 0) {
+        clearInterval(timeInterval);
+        setEndGame(true);
+      }
+    }, 1000)
+  }
+
   // The Dealer's turn
   // TODO: reveal hidden card if the visible card is an ace (check for blackjack)
   useEffect(() => {
     // Once all of the dealer's cards are revealed (after the player's turn)
     // and if dealerTotal is less than 17,
-    if (turn === 2 && dealerTotal < 17) {
+    if (turn === 2 && dealerTotal < 17 && playerTotal <= 21) {
       // A new card (integer between 1 and 52) is drawn
       const arr = [...dealerHand];
       const num = drawNumber();
@@ -40,7 +54,10 @@ const Game = () => {
     } else if (turn === 2) {
       incrementTurn();
     }
-  }, [dealerTotal])
+    if (turn === 3) {
+      showReset();
+    }
+  }, [dealerTotal, turn])
   
   // When the value of hand changes, localStorage is updated
   useEffect(() => {
@@ -51,7 +68,11 @@ const Game = () => {
       // localStorage is updated with the hand array
       localStorage.setItem('player', JSON.stringify(hand));
     }
-  }, [hand]);
+    if (playerTotal > 21) {
+      incrementTurn();
+      showReset();
+    }
+  }, [hand, playerTotal]);
 
   // When the value of dealerHand changes, localStorage is updated in a similar way as 'hand'
   useEffect(() => {
@@ -66,14 +87,15 @@ const Game = () => {
 
   return (
     <>
-      {/* TODO: Create win/bust condition (including natural win) and reset screen */}
       <Nav dealerTotal={dealerTotal}/>
       <main>
         <Dealer hand={dealerHand} dealerLength={dealerHand.length} setDealerTotal={setDealerTotal}/>
         <Hand hand={hand} playerLength={hand.length} setPlayerTotal={setPlayerTotal}/>
       </main>
       <Footer hand={hand} setHand={setHand} playerTotal={playerTotal}/>
-      <Reset dealer={dealerTotal} player={playerTotal}/>
+      {endGame? 
+      <Reset dealer={dealerTotal} player={playerTotal}/> 
+      : <></> }
     </>
   )
 }

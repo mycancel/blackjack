@@ -1,6 +1,9 @@
 import React from 'react';
 import ResetBtn from './ResetBtn';
 
+//TODO: end game on blackjack with special ending screen
+// TODO: reduce flashing of components when updating
+
 const Reset = ({dealer, player}) => {
   if (player > 21) {
     return (
