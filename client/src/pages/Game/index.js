@@ -13,7 +13,7 @@ const Game = () => {
   // When the game starts, there will most likely be nothing in the local Storage,
   // Thus, the helper startGame will return an array of two numbers
   // However, if there is something stored, the stored array will populate the hands/values
-  const playerAtStartOrRefresh = JSON.parse(localStorage.getItem('player')) ||startGame();
+  const playerAtStartOrRefresh = JSON.parse(localStorage.getItem('player')) || startGame();
   const dealerAtStartOrRefresh = JSON.parse(localStorage.getItem('dealer')) || startGame();
 
   // The hand will be what the player is holding (array of integers)
@@ -103,7 +103,7 @@ const Game = () => {
       </main>
       <Footer hand={hand} setHand={setHand} playerTotal={playerTotal}/>
       {endGame? 
-      <Reset dealer={dealerTotal} player={playerTotal}/> 
+      <Reset dealer={dealerTotal} player={playerTotal} blackJack={blackJack}/> 
       : <></> }
     </>
   )

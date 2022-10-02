@@ -4,8 +4,26 @@ import ResetBtn from './ResetBtn';
 //TODO: end game on blackjack with special ending screen
 // TODO: reduce flashing of components when updating
 
-const Reset = ({dealer, player}) => {
-  if (player > 21) {
+const Reset = ({dealer, player, blackJack}) => {
+  if (dealer === player) {
+    return (
+      <div className='resetModal'>
+        <div className='resetModalContent'>
+          <h2>Tie!</h2>
+          <ResetBtn />
+        </div>
+      </div>
+    )
+  } else if (blackJack && player === 21) {
+    return (
+      <div className='resetModal'>
+        <div className='resetModalContent'>
+          <h2>BlackJack!</h2>
+          <ResetBtn />
+        </div>
+      </div>
+    )
+  } else if (player > 21) {
     return (
       <div className='resetModal'>
         <div className='resetModalContent'>
@@ -19,15 +37,6 @@ const Reset = ({dealer, player}) => {
       <div className='resetModal'>
         <div className='resetModalContent'>
           <h2>Player Won!</h2>
-          <ResetBtn />
-        </div>
-      </div>
-    )
-  } else if (dealer === player) {
-    return (
-      <div className='resetModal'>
-        <div className='resetModalContent'>
-          <h2>Tie!</h2>
           <ResetBtn />
         </div>
       </div>
