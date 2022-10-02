@@ -4,7 +4,7 @@ import { uuid } from '../../utils/helpers';
 import { useGameContext } from '../../utils/GameContext';
 import './Dealer.css'
 
-const Dealer = ({ hand, dealerLength, setDealerTotal }) => {
+const Dealer = ({ hand, dealerLength, setDealerTotal, blackJack, setBlackJack }) => {
   // The turn value is recieved from GameContext
   const { turn } = useGameContext();
   // The valueArray is assigned an empty array
@@ -12,10 +12,10 @@ const Dealer = ({ hand, dealerLength, setDealerTotal }) => {
 
   // If it is not the player's turn (turn === 1), it is the dealer's turn
   // and both cards are revealed.
-  if (turn > 1) {
+  if (turn > 1 || blackJack) {
     return (
       <article className="dealer">
-        {hand.map((card) => <Card key={uuid()} order={card} handLength={dealerLength} setTotal={setDealerTotal} valueArray={valueArray}/>)}
+        {hand.map((card) => <Card key={uuid()} order={card} handLength={dealerLength} setTotal={setDealerTotal} valueArray={valueArray} setBlackJack={setBlackJack}/>)}
       </article>
     )
   }
@@ -24,7 +24,7 @@ const Dealer = ({ hand, dealerLength, setDealerTotal }) => {
   else {
     return (
       <article className="dealer firstRound">
-        {hand.map((card) => <Card key={uuid()} order={card} handLength={dealerLength} setTotal={setDealerTotal} valueArray={valueArray} hasHiddenCard={true}/>)}
+        {hand.map((card) => <Card key={uuid()} order={card} handLength={dealerLength} setTotal={setDealerTotal} valueArray={valueArray} setBlackJack={setBlackJack} hasHiddenCard={true}/>)}
       </article>
     )
   }

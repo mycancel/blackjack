@@ -13,7 +13,7 @@ const Game = () => {
   // When the game starts, there will most likely be nothing in the local Storage,
   // Thus, the helper startGame will return an array of two numbers
   // However, if there is something stored, the stored array will populate the hands/values
-  const playerAtStartOrRefresh = JSON.parse(localStorage.getItem('player')) || startGame();
+  const playerAtStartOrRefresh = JSON.parse(localStorage.getItem('player')) ||startGame();
   const dealerAtStartOrRefresh = JSON.parse(localStorage.getItem('dealer')) || startGame();
 
   // The hand will be what the player is holding (array of integers)
@@ -27,6 +27,9 @@ const Game = () => {
   // The endGame state indicates when the Reset component is revealed to the player
   const [endGame, setEndGame] = useState(false);
 
+  const [blackJack, setBlackJack] = useState(false);
+  console.log(blackJack);
+
   const showReset = () => {
     let time = 1;
     const timeInterval = setInterval(function () {
@@ -38,9 +41,13 @@ const Game = () => {
     }, 1000)
   }
 
-  // The Dealer's turn
-  // TODO: reveal hidden card if the visible card is an ace (check for blackjack)
   useEffect(() => {
+    if (blackJack) showReset();
+  }, [blackJack])
+
+  // The Dealer's turn
+  useEffect(() => {
+    // TODO: fix dealer picking up more cards than needed
     // Once all of the dealer's cards are revealed (after the player's turn)
     // and if dealerTotal is less than 17,
     if (turn === 2 && dealerTotal < 17 && playerTotal <= 21) {
@@ -55,7 +62,7 @@ const Game = () => {
       incrementTurn();
     }
     // When the dealer's turn ends, the game ends.
-    if (turn === 3) {
+    else if (turn === 3) {
       showReset();
     }
   }, [dealerTotal, turn])
@@ -69,6 +76,7 @@ const Game = () => {
       // localStorage is updated with the hand array
       localStorage.setItem('player', JSON.stringify(hand));
     }
+    if (hand.length === 2 && playerTotal === 21) setBlackJack(true);
     if (playerTotal > 21) {
       incrementTurn();
       showReset();
@@ -90,8 +98,8 @@ const Game = () => {
     <>
       <Nav dealerTotal={dealerTotal}/>
       <main>
-        <Dealer hand={dealerHand} dealerLength={dealerHand.length} setDealerTotal={setDealerTotal}/>
-        <Hand hand={hand} playerLength={hand.length} setPlayerTotal={setPlayerTotal}/>
+        <Dealer hand={dealerHand} dealerLength={dealerHand.length} setDealerTotal={setDealerTotal} blackJack={blackJack} setBlackJack={setBlackJack}/>
+        <Hand hand={hand} playerLength={hand.length} setPlayerTotal={setPlayerTotal} setBlackJack={setBlackJack}/>
       </main>
       <Footer hand={hand} setHand={setHand} playerTotal={playerTotal}/>
       {endGame? 

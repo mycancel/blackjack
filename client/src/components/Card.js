@@ -3,7 +3,7 @@ import { QUERY_DRAW_CARD } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 import { uuid } from '../utils/helpers';
 
-const Card = ({ order,  handLength, setTotal, valueArray, hasHiddenCard = false }) => {
+const Card = ({ order,  handLength, setTotal, valueArray, setBlackJack, hasHiddenCard = false }) => {
   // Card information is queried based on order number
   const {loading, data} = useQuery(QUERY_DRAW_CARD, {
     variables: {order: order}
@@ -50,7 +50,11 @@ const Card = ({ order,  handLength, setTotal, valueArray, hasHiddenCard = false 
       } else {
         // The hand would be the dealer hand on the first round,
         // and only the second card (of an array of 2 elements) is counted
-        const total = valueArray[1];
+        let total = valueArray[1];
+        if ((total + valueArray[0]) === 21) {
+          total = 21;
+          setBlackJack(true);
+        }
         setTotal(total);
       }
     }
