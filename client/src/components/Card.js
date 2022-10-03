@@ -12,6 +12,34 @@ const Card = ({ order,  handLength, setTotal, valueArray, setBlackJack, hasHidde
   const card = data?.drawCard;
   const alt = card?.name + ' of ' + card?.suit;
 
+  const calculateTotal = async () => {
+    // And there is no hidden cards in the hand
+    if (!hasHiddenCard) {
+      // The elements in the valueArray are added together
+      let total = await valueArray.reduce((a,b) => a + b);
+      // If the total is more than 21, but includes an ace (card value = 11),
+      if (total > 21 && valueArray.includes(11)) {
+        // The card value of each ace is reduced to '1' until total is less than 21
+        total = await adjustTotalForAces(total, valueArray);
+      }
+      // and set to either setPlayerTotal or setDealerTotal
+      setTotal(total);
+    // If there is a hidden card in the hand,
+    } else {
+      // The hand would be the dealer hand on the first round,
+      // and only the second card (of an array of 2 elements) is counted
+      let total = valueArray[1];
+      // If the dealer hand totals 21, they have a blackjack.
+      if ((total + valueArray[0]) === 21) {
+        // The total is set to 21
+        total = 21;
+        // and the blackJack state is set to true
+        setBlackJack(true);
+      }
+      setTotal(total);
+    }
+  }
+
   // Aces have the value of 11 or 1
   // This function decreases the value of ace(s) in the valueArray if the total is over 21
   const adjustTotalForAces = (originalTotal, array) => {
@@ -35,31 +63,7 @@ const Card = ({ order,  handLength, setTotal, valueArray, setBlackJack, hasHidde
     }
     // When the valueArray is the length of the hand
     if (valueArray.length === handLength) {
-      // And there is no hidden cards in the hand
-      if (!hasHiddenCard) {
-        // The elements in the valueArray are added together
-        let total = valueArray.reduce((a,b) => a + b);
-        // If the total is more than 21, but includes an ace (card value = 11),
-        if (total > 21 && valueArray.includes(11)) {
-          // The card value of each ace is reduced to '1' until total is less than 21
-          total = adjustTotalForAces(total, valueArray);
-        }
-        // and set to either setPlayerTotal or setDealerTotal
-        setTotal(total);
-      // If there is a hidden card in the hand,
-      } else {
-        // The hand would be the dealer hand on the first round,
-        // and only the second card (of an array of 2 elements) is counted
-        let total = valueArray[1];
-        // If the dealer hand totals 21, they have a blackjack.
-        if ((total + valueArray[0]) === 21) {
-          // The total is set to 21
-          total = 21;
-          // and the blackJack state is set to true
-          setBlackJack(true);
-        }
-        setTotal(total);
-      }
+      calculateTotal();
     }
   })
 
