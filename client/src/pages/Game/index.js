@@ -10,7 +10,7 @@ import { useGameContext } from '../../utils/GameContext';
 
 const Game = () => { 
   const { turn, incrementTurn } = useGameContext();
-  // When the game starts, there will most likely be nothing in the local Storage,
+  // When the game starts, there will most likely be nothing in the localStorage,
   // Thus, the helper startGame will return an array of two numbers
   // However, if there is something stored, the stored array will populate the hands/values
   const playerAtStartOrRefresh = JSON.parse(localStorage.getItem('player')) || startGame();
@@ -26,23 +26,30 @@ const Game = () => {
 
   // The endGame state indicates when the Reset component is revealed to the player
   const [endGame, setEndGame] = useState(false);
-
+  // The blackJack state = true when either the player or dealer is dealt 21 from the beginning
+  // In this case the game ends early
   const [blackJack, setBlackJack] = useState(false);
-  console.log(blackJack);
 
+  // Called to show the Reset component
   const showReset = () => {
     let time = 1;
+    // timeInterval creates a timer to delay the Reset Component from appearing too soon
     const timeInterval = setInterval(function () {
       -- time;
       if (time === 0) {
+        // After the timer is completed.
         clearInterval(timeInterval);
+        // The endGame state is changed
         setEndGame(true);
       }
     }, 1000)
   }
 
+  // If there is a blackJack, blackJack will be set to true
   useEffect(() => {
+    // showReset is called to end the game
     if (blackJack) showReset();
+    return;
   }, [blackJack])
 
   // The Dealer's turn
@@ -58,12 +65,12 @@ const Game = () => {
       arr.push(num);
       // which is then assigned to the dealerHand state
       setDealer(arr);
+      return;
+      // If the dealerTotal is greater than or equal to 17, 
     } else if (turn === 2) {
-      incrementTurn();
-    }
-    // When the dealer's turn ends, the game ends.
-    else if (turn === 3) {
+      // No more cards are drawn, and the game ends.
       showReset();
+      return;
     }
   }, [dealerTotal, turn])
   
@@ -76,7 +83,9 @@ const Game = () => {
       // localStorage is updated with the hand array
       localStorage.setItem('player', JSON.stringify(hand));
     }
+    // At the start of the game, if the total is 21, blackJack is set to true
     if (hand.length === 2 && playerTotal === 21) setBlackJack(true);
+    // If the playerTotal goes above 21, The game ends.
     if (playerTotal > 21) {
       incrementTurn();
       showReset();

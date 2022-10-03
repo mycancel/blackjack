@@ -51,8 +51,11 @@ const Card = ({ order,  handLength, setTotal, valueArray, setBlackJack, hasHidde
         // The hand would be the dealer hand on the first round,
         // and only the second card (of an array of 2 elements) is counted
         let total = valueArray[1];
+        // If the dealer hand totals 21, they have a blackjack.
         if ((total + valueArray[0]) === 21) {
+          // The total is set to 21
           total = 21;
+          // and the blackJack state is set to true
           setBlackJack(true);
         }
         setTotal(total);
