@@ -4,7 +4,7 @@ import { uuid } from '../../utils/helpers';
 import { useGameContext } from '../../utils/GameContext';
 import './Dealer.css'
 
-const Dealer = ({ hand, dealerLength, setDealerTotal, blackJack, setBlackJack }) => {
+const Dealer = ({ hand, dealerLength, setDealerTotal, blackJack, setBlackJack, setFirst }) => {
   // The turn value is recieved from GameContext
   const { turn } = useGameContext();
   // The valueArray is assigned an empty array
@@ -24,7 +24,7 @@ const Dealer = ({ hand, dealerLength, setDealerTotal, blackJack, setBlackJack })
   else {
     return (
       <article className="dealer firstRound">
-        {hand.map((card) => <Card key={uuid()} order={card} handLength={dealerLength} setTotal={setDealerTotal} valueArray={valueArray} setBlackJack={setBlackJack} hasHiddenCard={true}/>)}
+        {hand.map((card) => <Card key={uuid()} order={card} handLength={dealerLength} setTotal={setDealerTotal} valueArray={valueArray} setBlackJack={setBlackJack} hasHiddenCard={true} setFirst={setFirst}/>)}
       </article>
     )
   }

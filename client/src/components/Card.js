@@ -3,7 +3,7 @@ import { QUERY_DRAW_CARD } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 import { uuid } from '../utils/helpers';
 
-const Card = ({ order,  handLength, setTotal, valueArray, setBlackJack, hasHiddenCard = false }) => {
+const Card = ({ order,  handLength, setTotal, valueArray, setBlackJack, hasHiddenCard = false, setFirst }) => {
   // Card information is queried based on order number
   const {loading, data} = useQuery(QUERY_DRAW_CARD, {
     variables: {order: order}
@@ -36,6 +36,9 @@ const Card = ({ order,  handLength, setTotal, valueArray, setBlackJack, hasHidde
         // and the blackJack state is set to true
         setBlackJack(true);
       }
+      // set the state for firstDealerTotal
+      setFirst(total);
+      // set the DealerTotal state
       setTotal(total);
     }
   }

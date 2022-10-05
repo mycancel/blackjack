@@ -10,6 +10,8 @@ import { useGameContext } from '../../utils/GameContext';
 
 const Game = () => { 
   const { turn, incrementTurn } = useGameContext();
+  // TODO: Use the Global Provider to reduce states/localStorage
+
   // When the game starts, there will most likely be nothing in the localStorage,
   // Thus, the helper startGame will return an array of two numbers
   // However, if there is something stored, the stored array will populate the hands/values
@@ -23,7 +25,8 @@ const Game = () => {
   // The Total state keeps record of the value of the dealers and players cards
   const [dealerTotal, setDealerTotal] = useState(0);
   const [playerTotal, setPlayerTotal] = useState(0);
-
+  // The firstDealerTotal is used to prevent extra cards from being drawn when the dealerTotal is not fully updated on the second turn
+  const [firstDealerTotal, setFirst] = useState(0);
   // The endGame state indicates when the Reset component is revealed to the player
   const [endGame, setEndGame] = useState(false);
   // The blackJack state = true when either the player or dealer is dealt 21 from the beginning
@@ -54,10 +57,9 @@ const Game = () => {
 
   // The Dealer's turn
   useEffect(() => {
-    // TODO: fix dealer picking up more cards than needed
-    // Once all of the dealer's cards are revealed (after the player's turn)
+    // Once all of the dealer's cards are revealed (after the player's turn and after dealerTotal has updated)
     // and if dealerTotal is less than 17,
-    if (turn === 2 && dealerTotal < 17 && playerTotal <= 21) {
+    if (turn === 2 && dealerTotal !== firstDealerTotal && dealerTotal < 17 && playerTotal <= 21) {
       // A new card (integer between 1 and 52) is drawn
       const arr = [...dealerHand];
       const num = drawNumber();
@@ -107,7 +109,7 @@ const Game = () => {
     <>
       <Nav dealerTotal={dealerTotal}/>
       <main>
-        <Dealer hand={dealerHand} dealerLength={dealerHand.length} setDealerTotal={setDealerTotal} blackJack={blackJack} setBlackJack={setBlackJack}/>
+        <Dealer hand={dealerHand} dealerLength={dealerHand.length} setDealerTotal={setDealerTotal} blackJack={blackJack} setBlackJack={setBlackJack} setFirst={setFirst}/>
         <Hand hand={hand} playerLength={hand.length} setPlayerTotal={setPlayerTotal} setBlackJack={setBlackJack}/>
       </main>
       <Footer hand={hand} setHand={setHand} playerTotal={playerTotal}/>
