@@ -109,7 +109,9 @@ const Game = () => {
     <>
       <Nav dealerTotal={dealerTotal}/>
       <main>
+        <h2>Dealer's Hand</h2>
         <Dealer hand={dealerHand} dealerLength={dealerHand.length} setDealerTotal={setDealerTotal} blackJack={blackJack} setBlackJack={setBlackJack} setFirst={setFirst}/>
+        <h2>Your Hand</h2>
         <Hand hand={hand} playerLength={hand.length} setPlayerTotal={setPlayerTotal} setBlackJack={setBlackJack}/>
       </main>
       <Footer hand={hand} setHand={setHand} playerTotal={playerTotal}/>
