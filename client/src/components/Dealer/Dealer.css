@@ -1,5 +1,1 @@
 /* TODO: Look at this reference for CSS Sprites: tutorialrepublic.com/css-tutorial/css-sprites.php */
-
-.firstRound > img:nth-child(1) {
-  content: url("../../images/backImage.jpg");
-}

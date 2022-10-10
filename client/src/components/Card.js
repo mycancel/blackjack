@@ -58,6 +58,22 @@ const Card = ({ order,  handLength, setTotal, valueArray, setBlackJack, hasHidde
     return newTotal;
   }
 
+  //TODO: improve when cards are flipped
+  const flipCards = () => {
+    const cardNodeList = document.querySelectorAll(".flip-card");
+    if (!hasHiddenCard) {
+      for (let node of cardNodeList) {
+        node.classList.add('flip');
+      }
+    } else {
+      const listLength = cardNodeList.length;
+      for (let i = 1; i < listLength; i ++) {
+        cardNodeList[i].classList.add('flip');
+      }
+    }
+    return;
+  }
+
   useEffect(() => {
     // When the data is found,
     if (data && card) {
@@ -67,26 +83,38 @@ const Card = ({ order,  handLength, setTotal, valueArray, setBlackJack, hasHidde
     // When the valueArray is the length of the hand
     if (valueArray.length === handLength) {
       calculateTotal();
+      flipCards();
     }
   })
 
   if (loading) {
     return (
-      <img 
-        key={uuid()}
-        alt='Loading'
-        src='/images/backImage.jpg'>
-      </img>
+      <div className="flip-card">
+        <div className="card-inner hidden">
+        </div>
+      </div>
     )
   }
 
   return (
-      <img 
-        src={card.frontImage} 
-        alt={alt} 
-        key={card.id} 
-        className="card">
-      </img>
+    <div className="flip-card">
+      <div className="card-content">
+        <div className="card-back">
+          <img
+            src="/images/backImage.jpg"
+            alt="Back of Card"
+            key={uuid()}>
+          </img>
+        </div>
+        <div className="card-front">
+          <img 
+            src={card.frontImage} 
+            alt={alt} 
+            key={card.id}>
+          </img>
+        </div>
+      </div>
+    </div>
   )
 }
 
