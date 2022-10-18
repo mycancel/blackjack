@@ -35,7 +35,7 @@ const Game = () => {
 
   // Called to show the Reset component
   const showReset = () => {
-    let time = 1;
+    let time = 2;
     // timeInterval creates a timer to delay the Reset Component from appearing too soon
     const timeInterval = setInterval(function () {
       -- time;
