@@ -10,7 +10,7 @@ const ResetBtn = () => {
         className='resetBtn' 
         onClick={ () => {
           resetGame();
-          document.location.reload();
+          window.location.reload();
         }}>Play Again
       </button>
       <Link to={'/'}>
