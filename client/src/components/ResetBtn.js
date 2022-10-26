@@ -4,13 +4,18 @@ import { useGameContext } from '../utils/GameContext';
 
 const ResetBtn = () => {
   const { resetGame, endGameState } = useGameContext();
+
+  const resetStates = () => {
+    window.location.reload();
+  };
+
   return (
     <>
       <button
         className='resetBtn' 
         onClick={ () => {
           resetGame();
-          document.location.reload(true);
+          resetStates();
         }}>Play Again
       </button>
       <Link to={'/'}>
